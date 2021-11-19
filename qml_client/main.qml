@@ -65,34 +65,20 @@ Window {
                     centerIn: parent
                 }
 
-                MouseArea {
-                    height: 30
-                    width: 200
-                    cursorShape: Qt.IBeamCursor
+                TextField {
+                    id: text
+                    selectByMouse: true
+                    text: "ws://0.0.0.0:80"
 
-                    Rectangle {
-                        anchors {
-                            fill: parent
-                        }
-                        border.width: 1
-                        border.color: "#ccc"
+                    Component.onCompleted: {
+                        forceActiveFocus()
                     }
 
-                    TextEdit {
-                        id: text
-                        selectByMouse: true
-                        text: "ws://0.0.0.0:80"
-                        anchors {
-                            centerIn: parent
-                        }
-
-                        Component.onCompleted: {
-                            forceActiveFocus()
-                        }
-                    }
+                    onEditingFinished: connect.clicked()
                 }
 
                 Button {
+                    id: connect
                     text: "Connect"
                     Layout.alignment: Qt.AlignHCenter
 

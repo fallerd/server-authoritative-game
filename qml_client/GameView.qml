@@ -46,6 +46,20 @@ Rectangle {
             width: 20; height: 20
             color: "red"
 
+            Behavior on x {
+                NumberAnimation {
+                    duration: 50
+                    easing.type: Easing.Linear
+                }
+            }
+
+            Behavior on y {
+                NumberAnimation {
+                    duration: 50
+                    easing.type: Easing.Linear
+                }
+            }
+
             PlayerController {
                 id: playerController
             }
